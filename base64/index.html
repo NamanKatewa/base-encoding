@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base 64 Encoding</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <nav>
+        <h1>Base 64 Encoding</h1>
+        <div class="links">
+            <a href="/base64/index.html">Base 64</a>
+            <a href="/base32/index.html">Base 32</a>
+        </div>
+    </nav>
+    <main class="encode-info">
+        <p>Binary data into text string using a set of 64 different ASCII characters.
+            <br>
+            <br>
+            <b>Character set -</b>
+            <br>
+            ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+            <br>
+            <br>
+            Padding character "=" is used to ensure that the length of the encoded output is a multiple of 4.
+        </p>
+
+        <h2>Encoding</h2>
+        <p>Convert input data to binary. (ASCII Byte values)
+            Combine the binary values into a continuous string of binary digits.
+            Divide into 6 bit groups.
+            Convert each group to corresponding decimal value.
+            Map each decimal value to a base 64 character.</p>
+
+        <h2>Handling Padding</h2>
+        <p>If input is not a multiple of 3, padding is added to the byte representation.
+            To make output length a multiple of 4, add padding to the output.</p>
+
+        <h2>Decoding</h2>
+        <p>Remove padding.
+            Map base 64 to 6 bit values.
+            combine 6 bit values into 8 bit Bytes.</p>
+    </main>
+    <main class="logic">
+        <div class="buttons">
+            <button id="encode" class="selected">Encode</button>
+            <button id="decode" decode>Decode</button>
+        </div>
+        <form action="submit" id="form">
+            <input type="text" id="input">
+            <button type="submit">Start</button>
+        </form>
+        <div class="res">
+            <h3>OUTPUT</h3>
+            <p id="output"></p>
+        </div>
+    </main>
+    <script src="base64.js"></script>
+</body>
+
+</html>
